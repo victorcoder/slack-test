@@ -1,8 +1,5 @@
 language: go
 
-env:
-  
-
 install: true
 
 matrix:
