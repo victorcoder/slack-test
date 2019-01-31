@@ -134,7 +134,7 @@ func (sts *Server) SawMessage(msg string) bool {
 	return false
 }
 
-// GetAPIURL returns the api url you can pass to slack.SLACK_API
+// GetAPIURL returns the api url you can pass to slack.APIURL
 func (sts *Server) GetAPIURL() string {
 	return "http://" + sts.ServerAddr + "/"
 }
@@ -281,7 +281,7 @@ func (sts *Server) SendBotGroupInvite() {
 
 // GetTestRTMInstance will give you an RTM instance in the context of the current fake server
 func (sts *Server) GetTestRTMInstance() (*slack.Client, *slack.RTM) {
-	slack.SLACK_API = sts.GetAPIURL()
+	slack.APIURL = sts.GetAPIURL()
 	api := slack.New("ABCEFG")
 	rtm := api.NewRTM()
 	return api, rtm
